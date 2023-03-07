@@ -1,9 +1,103 @@
+<!DOCTYPE html>
 <html>
- 
-<body>
-  <h1>Arun Sagar S A</h1>
-  <p>Welcome to my website!</p>
-  <img src="https://content.codecademy.com/articles/github-pages-via-web-app/happy-ice-cream.gif" />
-</body>
- 
+  <head>
+    <title>My Love Letter</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f8f8f8;
+      }
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 50px;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      h1 {
+        font-size: 36px;
+        color: #333;
+        text-align: center;
+        margin-top: 0;
+      }
+      p {
+        font-size: 20px;
+        color: #555;
+        line-height: 1.5;
+        margin-bottom: 20px;
+      }
+      .btn {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #ff6b6b;
+        color: #fff;
+        font-size: 18px;
+        border-radius: 5px;
+        text-decoration: none;
+        transition: background-color 0.3s ease;
+      }
+      .btn:hover {
+        background-color: #ff4d4d;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1 id="p">msg = ;</h1>
+      <p id="p1"></p>
+      <p id="p2"></p>
+      <p id="p3"></p>
+      <p>
+        I want you to know that I am committed to our relationship and to making
+        you happy. I promise to support you through the good times and the bad,
+        to listen to you with an open heart, and to always show you how much I
+        love you.
+      </p>
+      <p>
+        Thank you for being the love of my life, [insert name here]. I look
+        forward to spending many more years together.
+      </p>
+      <p id="message">Forever yours,</p>
+      <p>[insert your name here]</p>
+      <a href="#" class="btn">Send this letter</a>
+    </div>
+    <script>
+      function typeMessage(elementId, message, delay) {
+        var messageElement = document.getElementById(elementId);
+        var i = 0;
+        var speed = 50; // typing speed in milliseconds
+
+        function typeCharacter() {
+          if (i < message.length) {
+            messageElement.innerHTML += message.charAt(i);
+            i++;
+            setTimeout(typeCharacter, speed);
+          }
+        }
+
+        if (delay) {
+          setTimeout(function () {
+            i = 0;
+            messageElement.innerHTML = "";
+            typeCharacter();
+          }, delay);
+        } else {
+          typeCharacter();
+        }
+      }
+
+      // Call the function with different parameters for different <p> tags
+      typeMessage("p1", "Hello, world!", 2000);
+      typeMessage(
+        "p2",
+        "I wanted to take a moment to express how much I love and appreciate you. You bring so much joy and happiness into my life, and I am grateful for every moment we spend together.",
+        4000
+      );
+      typeMessage(
+        "p3",
+        "I wanted to take a moment to express how much I love and appreciate you. You bring so much joy and happiness into my life, and I am grateful for every moment we spend together.",
+        10000
+      );
+    </script>
+  </body>
 </html>
