@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My Love Letter</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f8f8f8;
+      }
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 50px;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      h1 {
+        font-size: 36px;
+        color: #333;
+        text-align: center;
+        margin-top: 0;
+      }
+      p {
+        font-size: 20px;
+        color: #555;
+        line-height: 1.5;
+        margin-bottom: 20px;
+      }
+      .btn {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #ff6b6b;
+        color: #fff;
+        font-size: 18px;
+        border-radius: 5px;
+        text-decoration: none;
+        transition: background-color 0.3s ease;
+      }
+      .btn:hover {
+        background-color: #ff4d4d;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1 id="p">Now whats this about!!</h1>
+      <p id="p1"></p>
+      <p id="p2"></p>
+      <p id="p3"></p>
+      <a href="#" class="btn" onclick="goToPage()">Click to go back </a>
+    </div>
+    <script>
+      function typeMessage(elementId, message, delay) {
+        var messageElement = document.getElementById(elementId);
+        var i = 0;
+        var speed = 100; // typing speed in milliseconds
+
+        function typeCharacter() {
+          if (i < message.length) {
+            messageElement.innerHTML += message.charAt(i);
+            i++;
+            setTimeout(typeCharacter, speed);
+          }
+        }
+
+        if (delay) {
+          setTimeout(function () {
+            i = 0;
+            messageElement.innerHTML = "";
+            typeCharacter();
+          }, delay);
+        } else {
+          typeCharacter();
+        }
+      }
+
+      // Call the function with different parameters for different <p> tags
+      typeMessage(
+        "p1",
+        "Awwww you clicked, sorry Love thats all I didn't want to over do it",
+        1000
+      );
+      typeMessage(
+        "p2",
+        "I just want to pull you're cheeks (you look so cute!!!)",
+        8950
+      );
+      typeMessage("p3", "Once again, Welcome back I Love you so much!", 15000);
+      function goToPage() {
+        window.location.href = "./index.html";
+      }
+    </script>
+  </body>
+</html>
