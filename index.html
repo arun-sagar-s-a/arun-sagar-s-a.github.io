@@ -43,29 +43,23 @@
   </head>
   <body>
     <div class="container">
-      <h1 id="p">msg = ;</h1>
+      <h1 id="p">Guess whats this about!!</h1>
       <p id="p1"></p>
       <p id="p2"></p>
       <p id="p3"></p>
-      <p>
-        I want you to know that I am committed to our relationship and to making
-        you happy. I promise to support you through the good times and the bad,
-        to listen to you with an open heart, and to always show you how much I
-        love you.
-      </p>
-      <p>
-        Thank you for being the love of my life, [insert name here]. I look
-        forward to spending many more years together.
-      </p>
-      <p id="message">Forever yours,</p>
-      <p>[insert your name here]</p>
-      <a href="#" class="btn">Send this letter</a>
+      <p id="p4"></p>
+      <p id="p5"></p>
+      <p id="p6"></p>
+      <p id="p7"></p>
+      <a href="#" class="btn" onclick="goToPage()"
+        >Click only at the end for some more (optiional)</a
+      >
     </div>
     <script>
       function typeMessage(elementId, message, delay) {
         var messageElement = document.getElementById(elementId);
         var i = 0;
-        var speed = 50; // typing speed in milliseconds
+        var speed = 100; // typing speed in milliseconds
 
         function typeCharacter() {
           if (i < message.length) {
@@ -87,17 +81,28 @@
       }
 
       // Call the function with different parameters for different <p> tags
-      typeMessage("p1", "Hello, world!", 2000);
-      typeMessage(
-        "p2",
-        "I wanted to take a moment to express how much I love and appreciate you. You bring so much joy and happiness into my life, and I am grateful for every moment we spend together.",
-        4000
-      );
+      typeMessage("p1", "Hi Kidist (drum roll.......)", 1000);
+      typeMessage("p2", "Welcome back! ", 5000);
       typeMessage(
         "p3",
-        "I wanted to take a moment to express how much I love and appreciate you. You bring so much joy and happiness into my life, and I am grateful for every moment we spend together.",
-        10000
+        "I can't express how much I missed youu while you were away, but now that you're back, my heart is full again.",
+        6500
       );
+      typeMessage(
+        "p4",
+        "I couldn't wait for this moment to tell you how much you mean to me. Even as you read this I'm just staring at you Beautiful!!! right now!!",
+        18000
+      );
+      typeMessage(
+        "p5",
+        "you looked didn't you!! haha sweet heart, if not its fine I was just playing LOL",
+        35000
+      );
+      typeMessage("p6", "Forever,", 45000);
+      typeMessage("p7", "Arun", 48000);
+      function goToPage() {
+        window.location.href = "./page_2.html";
+      }
     </script>
   </body>
 </html>
